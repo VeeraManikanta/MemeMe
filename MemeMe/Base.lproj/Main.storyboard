@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17B48" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,33 +57,35 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-cQ-Ntd" userLabel="Text Field1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-cQ-Ntd" userLabel="Text Field1">
                                 <rect key="frame" x="16" y="79" width="343" height="30"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" red="0.99730812823834192" green="0.99730812823834192" blue="0.99730812823834192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-XU-X63" userLabel="Text Field2">
-                                <rect key="frame" x="16" y="583" width="343" height="30"/>
-                                <nil key="textColor"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-XU-X63" userLabel="Text Field2">
+                                <rect key="frame" x="16" y="573" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pSR-HJ-b3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0tb-f1-dWG"/>
                             <constraint firstItem="BnJ-cQ-Ntd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2UU-Eb-0zU"/>
+                            <constraint firstItem="pSR-HJ-b3I" firstAttribute="top" secondItem="iCr-XU-X63" secondAttribute="bottom" constant="20" id="9Vv-6D-tb6"/>
+                            <constraint firstItem="pSR-HJ-b3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9pK-SE-rl3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BnJ-cQ-Ntd" secondAttribute="trailing" id="DJQ-oP-nvQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iCr-XU-X63" secondAttribute="trailing" id="LnP-Jd-hZ7"/>
                             <constraint firstAttribute="trailing" secondItem="mJm-iM-HHo" secondAttribute="trailing" id="SZc-V0-MVi"/>
-                            <constraint firstItem="mJm-iM-HHo" firstAttribute="leading" secondItem="pSR-HJ-b3I" secondAttribute="leading" id="VXT-qV-BtX"/>
                             <constraint firstItem="mJm-iM-HHo" firstAttribute="bottom" secondItem="QUh-ze-Quk" secondAttribute="top" id="XJl-2O-Wog"/>
-                            <constraint firstItem="iCr-XU-X63" firstAttribute="top" secondItem="QUh-ze-Quk" secondAttribute="bottom" constant="-40" id="YPT-9X-fO9"/>
                             <constraint firstItem="iCr-XU-X63" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YWO-7W-FEB"/>
-                            <constraint firstItem="mJm-iM-HHo" firstAttribute="trailing" secondItem="pSR-HJ-b3I" secondAttribute="trailing" id="Zsv-pG-vcN"/>
                             <constraint firstItem="mJm-iM-HHo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="d2y-1q-XdH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QUh-ze-Quk" secondAttribute="trailing" id="fhw-fa-8go"/>
+                            <constraint firstAttribute="trailing" secondItem="pSR-HJ-b3I" secondAttribute="trailing" id="mHZ-cD-ZzB"/>
                             <constraint firstItem="QUh-ze-Quk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oGO-QV-v9n"/>
                             <constraint firstItem="BnJ-cQ-Ntd" firstAttribute="top" secondItem="QUh-ze-Quk" secondAttribute="top" constant="15" id="p9b-ip-CwA"/>
                             <constraint firstItem="mJm-iM-HHo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q3x-da-ala"/>
