@@ -22,10 +22,9 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerView.contentMode = .scaleAspectFit
-        configureTextField(textField: textField1)
-        configureTextField(textField: textField2)
-        textField1.text="TOP"
-        textField2.text="BOTTOM"
+        configureTextField(textField: textField1,text: "TOP")
+        configureTextField(textField: textField2,text: "BOTTOM")
+       
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
@@ -47,11 +46,12 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
         unsubscribeFromKeyboardNotifications()
     }
     
-    func configureTextField(textField : UITextField){
-        textField.textAlignment = NSTextAlignment.center
+    func configureTextField(textField : UITextField,text : String){
         textField.delegate = self
         textField.defaultTextAttributes = Meme.memeTextAttributes
+        textField.textAlignment = NSTextAlignment.center
         textField.borderStyle = .none
+        textField.text=text
     }
     
     
@@ -83,33 +83,41 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
         let meme = Meme(topText: textField1.text!, bottomText: textField2.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
     }
     
+    func toolBarVisibility(value : Bool){
+        toolBar1.isHidden = value
+        toolBar2.isHidden = value
+    }
     
     func generateMemedImage() -> UIImage {
         
-        toolBar1.isHidden = true
-        toolBar2.isHidden = true
+        toolBarVisibility(value: true)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        toolBar1.isHidden = false
-        toolBar2.isHidden = false
+        toolBarVisibility(value: false)
         return memedImage
     }
     
+   
     
 
     //Camera -- Album
     
-    @IBAction func pickImageFromCamera(_ sender: Any) {
-        pickImageWithSourceType(.camera)
+    @IBAction func pickImage(_ sender: Any) {
+        switch((sender as AnyObject).tag){
+        case 0:
+            pickImageWithSourceType(.camera)
+        case 1:
+            pickImageWithSourceType(.photoLibrary)
+        default:
+            print("Nothing is selected")
+        }
+        
     }
-
-    @IBAction func pickImageFromAlbum(_ sender: Any) {
-        pickImageWithSourceType(.photoLibrary)
-    }
+    
     
     func pickImageWithSourceType(_ sourceType: UIImagePickerControllerSourceType)  {
         let controller = UIImagePickerController()
@@ -130,7 +138,7 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
         else{
             shareButton.isEnabled = true
         }
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -152,13 +160,13 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
     
     func keyboardWillShow(_ notification:Notification) {
         if textField2.isFirstResponder{
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(_ notification:Notification) {
         if textField2.isFirstResponder{
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     

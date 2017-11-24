@@ -30,13 +30,13 @@
                                 <items>
                                     <barButtonItem systemItem="camera" id="u58-LD-a0y">
                                         <connections>
-                                            <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="49b-6U-sfy"/>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="wbG-WO-wWd"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="151" systemItem="fixedSpace" id="Ltz-kh-NFg"/>
-                                    <barButtonItem title="Album" id="Qg3-DN-Qxn">
+                                    <barButtonItem tag="1" title="Album" id="Qg3-DN-Qxn">
                                         <connections>
-                                            <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="pCO-3B-kTn"/>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="vD0-UX-uMn"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -58,15 +58,15 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-cQ-Ntd" userLabel="Text Field1">
-                                <rect key="frame" x="16" y="79" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.99730812823834192" green="0.99730812823834192" blue="0.99730812823834192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-XU-X63" userLabel="Text Field2">
-                                <rect key="frame" x="16" y="573" width="343" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="553" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.0021656411917098106" green="0.0021656411917098106" blue="0.0021656411917098106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -76,7 +76,7 @@
                         <constraints>
                             <constraint firstItem="pSR-HJ-b3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0tb-f1-dWG"/>
                             <constraint firstItem="BnJ-cQ-Ntd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2UU-Eb-0zU"/>
-                            <constraint firstItem="pSR-HJ-b3I" firstAttribute="top" secondItem="iCr-XU-X63" secondAttribute="bottom" constant="20" id="9Vv-6D-tb6"/>
+                            <constraint firstItem="pSR-HJ-b3I" firstAttribute="top" secondItem="iCr-XU-X63" secondAttribute="bottom" constant="40" id="9Vv-6D-tb6"/>
                             <constraint firstItem="pSR-HJ-b3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9pK-SE-rl3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BnJ-cQ-Ntd" secondAttribute="trailing" id="DJQ-oP-nvQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iCr-XU-X63" secondAttribute="trailing" id="LnP-Jd-hZ7"/>
@@ -87,7 +87,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="QUh-ze-Quk" secondAttribute="trailing" id="fhw-fa-8go"/>
                             <constraint firstAttribute="trailing" secondItem="pSR-HJ-b3I" secondAttribute="trailing" id="mHZ-cD-ZzB"/>
                             <constraint firstItem="QUh-ze-Quk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oGO-QV-v9n"/>
-                            <constraint firstItem="BnJ-cQ-Ntd" firstAttribute="top" secondItem="QUh-ze-Quk" secondAttribute="top" constant="15" id="p9b-ip-CwA"/>
+                            <constraint firstItem="BnJ-cQ-Ntd" firstAttribute="top" secondItem="QUh-ze-Quk" secondAttribute="top" constant="40" id="p9b-ip-CwA"/>
                             <constraint firstItem="mJm-iM-HHo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q3x-da-ala"/>
                             <constraint firstItem="QUh-ze-Quk" firstAttribute="bottom" secondItem="pSR-HJ-b3I" secondAttribute="top" id="rBu-gC-aeQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pSR-HJ-b3I" secondAttribute="bottom" id="rna-ok-dqC"/>
