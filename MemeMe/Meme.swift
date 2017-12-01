@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-class Meme {
 
 struct Meme{
     var topText: String
@@ -17,15 +16,7 @@ struct Meme{
     var originalImage: UIImage
     var memedImage: UIImage
 }
+
+
     
-    init(topText : String, bottomText : String, originalImage : UIImage, memedImage : UIImage) {
-        
-    }
-   
-static let memeTextAttributes:[String:Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName: -3.0]
-    
-}
+

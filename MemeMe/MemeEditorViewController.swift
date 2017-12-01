@@ -19,6 +19,12 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
+    let memeTextAttributes:[String:Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -3.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerView.contentMode = .scaleAspectFit
@@ -48,7 +54,7 @@ class MemeEditorViewController: UIViewController , UINavigationControllerDelegat
     
     func configureTextField(textField : UITextField,text : String){
         textField.delegate = self
-        textField.defaultTextAttributes = Meme.memeTextAttributes
+        textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = NSTextAlignment.center
         textField.borderStyle = .none
         textField.text=text
